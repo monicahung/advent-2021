@@ -9,6 +9,7 @@ def day3
     counts.push({ 'ones' => 0, 'zeroes' => 0 })
   end
 
+  # count all the occurrences
   data.each_with_index do |val, index|
     (0..data[0].length).each do |bit|
       case data[index][bit]
@@ -20,6 +21,7 @@ def day3
     end
   end
 
+  # generate epsilon and gamma
   most_common = []
   least_common = []
   counts.each do |counts|
@@ -32,7 +34,11 @@ def day3
       least_common.push('1')
     end
   end
+
+  # convert to decimal
   num_common = most_common.join.to_i(2)
   num_uncommon = least_common.join.to_i(2)
+
+  # answer
   puts num_common * num_uncommon
 end
