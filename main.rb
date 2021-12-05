@@ -1,3 +1,4 @@
 require_relative './Day2'
-
-day2
+require_relative './Day3'
+ 
+day3
